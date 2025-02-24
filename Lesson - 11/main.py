@@ -15,4 +15,5 @@ data['sex']=data['sex'].map({'unknown':0,'FEMALE':1,"MALE":2,}).astype(int)
 print(data.head())
 
 greph=pd.DataFrame(data.groupby("sex")['flipper_length'].sum())
-grephh=px.scatter('')
+grephh==px.scatter(greph,x=greph.index,y='flipper_length',size='flipper_length',size_max=100,color=greph.index,title="flipper length bigger in male or femal")
+grephh.write_html('flipper_lengths.html',auto_open=True)
